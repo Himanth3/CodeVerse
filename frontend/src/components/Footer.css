@@ -1,0 +1,18 @@
+.footer {
+    background: var(--bg-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+[data-theme='light'] .footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,48 @@
+# PyCode Project Documentation
+
+## Project Overview
+This project is a web application that integrates a React frontend with a Django backend. It allows for user authentication (signup, login) using JWT tokens and provides a foundation for full-stack development.
+
+## Project Structure
+The project is organized into two main directories:
+- **frontend/**: Contains the React application created with Vite.
+- **backend/**: Contains the Django server with REST API endpoints.
+
+## Tools & Technologies Used
+
+### Frontend
+- **Framework**: React
+- **Build Tool**: Vite
+- **Styling**: Vanilla CSS (with CSS variables for theming)
+- **Routing**: React Router Dom
+- **State/Effect**: React Hooks
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
+- **HTTP Client**: Axios (for communicating with the backend)
+
+### Backend
+- **Framework**: Django
+- **API Toolkit**: Django Rest Framework (DRF)
+- **Authentication**: JWT (JSON Web Tokens) via `djangorestframework-simplejwt`
+- **CORS Handling**: `django-cors-headers` (to allow requests from the React frontend)
+- **Database**: SQLite (default Django database)
+
+## Development Process
+1. **Frontend Setup**: Initialized using Vite (`npm create vite@latest`).
+2. **Backend Setup**: Initialized using Django (`django-admin startproject`).
+3. **Integration**: 
+   - Configured Django CORS headers to accept requests from the Vite dev server (usually localhost:5173).
+   - Set up Axios in React (`src/api/axios.js` or similar) to point to the Django API base URL.
+4. **Authentication Flow**:
+   - Implemented JWT authentication.
+   - React sends login credentials to Django.
+   - Django validates and returns access/refresh tokens.
+   - React stores tokens (e.g., in localStorage) and attaches them to subsequent requests.
+
+## Deployment Preparation
+- **Backend**: A `requirements.txt` file has been added to the `backend` folder.
+- **Frontend**: The React app is ready to be built using `npm run build` which generates static files in `dist/`.
+
+## Author
+Bammidi Himanth
+
