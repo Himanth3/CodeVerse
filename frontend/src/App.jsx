@@ -17,6 +17,8 @@ function App() {
     return (
         <Router>
             <div className="app-container">
+                <div className="floating-planet planet-1"></div>
+                <div className="floating-planet planet-2"></div>
                 <Navbar />
                 <main>
                     <Routes>

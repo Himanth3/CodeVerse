@@ -16,7 +16,7 @@ function Profile() {
                 const response = await api.get("profile/");
                 setUser(response.data);
             } catch (err) {
-                setError("Failed to fetch profile. Please login.");
+                setError(" Please login.");
                 console.error(err);
                 if (err.response && err.response.status === 401) {
                     navigate("/login");

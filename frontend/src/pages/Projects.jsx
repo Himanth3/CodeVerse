@@ -40,10 +40,10 @@ const Projects = () => {
 
     return (
         <div className="projects-page">
-            <header className="projects-header">
-                <h1>💡 Python Project Ideas</h1>
-                <p className="tagline">Practice by building! Start with fun and real-world Python projects.</p>
-            </header>
+            <div className="projects-header glass-panel" style={{padding: '2rem', marginBottom: '2rem', textAlign: 'center'}}>
+                <h1 style={{color: 'var(--accent-color)', textShadow: '0 0 10px var(--accent-color)'}}>💡 CodeVerse Project Ideas</h1>
+                <p className="tagline" style={{color: 'var(--text-muted)'}}>Practice by building! Start with fun and real-world software projects.</p>
+            </div>
 
             <div className="projects-container">
                 {projectCategories.map((category, index) => (

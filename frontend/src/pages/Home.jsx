@@ -1,6 +1,7 @@
 import MotivationHero from '../components/MotivationHero';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import api from '../api/axios';
 import './Home.css';
 
@@ -22,50 +23,69 @@ const Home = () => {
         fetchUser();
     }, []);
 
+    const benefits = [
+        { icon: '🚀', title: 'High Demand', desc: 'One of the most sought-after skill sets in the global tech industry.' },
+        { icon: '🧠', title: 'Problem Solving', desc: 'Coding teaches you to think logically and solve complex challenges.' },
+        { icon: '🌍', title: 'Build Anything', desc: 'From web apps to AI systems — the universe is your playground.' },
+        { icon: '💼', title: 'Future Proof', desc: 'Secure your career by mastering the foundation of the digital world.' },
+    ];
+
     return (
         <div className="home-page">
             {user && (
-                <div style={{ textAlign: 'center', padding: '2rem 1rem 0', background: 'var(--bg-color)' }}>
-                    <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>
-                        Welcome, <span style={{ color: 'var(--primary-color)' }}>{user.username}</span>! 👋
-                    </h1>
-                </div>
+                <motion.div
+                    className="welcome-banner"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h1>Welcome back, <span>{user.username}</span>! 👋</h1>
+                </motion.div>
             )}
+
             <MotivationHero />
 
             <section className="code-preview-section">
-                <div className="container">
-                    <h3>✨ Your First Python Code:</h3>
+                <motion.div
+                    className="code-preview-inner glass-panel"
+                    style={{ padding: '2rem', margin: '0 auto 1rem' }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h3>✨ Your first line of code:</h3>
                     <div className="code-block">
-                        <pre><code>print("Hello, Coder!")</code></pre>
+                        <code>System.out.println("Hello, CodeVerse! 🌌");</code>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             <section className="benefits-section">
                 <div className="container">
-                    <h2>🌟 Why Learn Python?</h2>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        🌟 Why Learn to Code?
+                    </motion.h2>
                     <div className="benefits-grid">
-                        <div className="benefit-card">
-                            <span className="icon">🔥</span>
-                            <h3>High Demand</h3>
-                            <p>One of the most sought-after skills in the tech industry.</p>
-                        </div>
-                        <div className="benefit-card">
-                            <span className="icon">🤖</span>
-                            <h3>AI & ML</h3>
-                            <p>The primary language for Artificial Intelligence and Machine Learning.</p>
-                        </div>
-                        <div className="benefit-card">
-                            <span className="icon">🎯</span>
-                            <h3>Simple Syntax</h3>
-                            <p>Read and write code almost like plain English.</p>
-                        </div>
-                        <div className="benefit-card">
-                            <span className="icon">💡</span>
-                            <h3>Versatile</h3>
-                            <p>Build web apps, scripts, data analysis tools, and more.</p>
-                        </div>
+                        {benefits.map((b, i) => (
+                            <motion.div
+                                key={b.title}
+                                className="benefit-card glass-panel"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                            >
+                                <span className="icon">{b.icon}</span>
+                                <h3>{b.title}</h3>
+                                <p>{b.desc}</p>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>

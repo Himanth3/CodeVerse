@@ -1,94 +1,151 @@
-# 🐍 Py-React Integration Project ⚛️
+# 🌌 CodeVerse ⚛️🍃
 
-Welcome to **Py-React**, a robust full-stack web application combining the power of **Django** for the backend and the dynamic interactivity of **React** for the frontend.
+Welcome to **CodeVerse** — a full-stack Learning Management System (LMS) built with **React** on the frontend and **Spring Boot** on the backend. CodeVerse empowers developers to learn programming through interactive courses, quizzes, downloadable resources, and a stunning space-themed UI.
+
+---
 
 ## 🌟 Project Overview
 
-This project demonstrates a seamless integration between a Python-based REST API and a modern JavaScript UI. It features secure user authentication (JWT), responsive design, and a scalable folder structure.
+CodeVerse is a modern, space-themed coding education platform that integrates a **React + Vite** frontend with a **Java 21 / Spring Boot** REST API backend. It features secure JWT-based authentication, a rich course catalog, interactive quizzes, and a persistent light/dark mode — all wrapped in a cinematic design with glowing accents and smooth animations.
+
+---
 
 ## ✨ Key Features
 
-*   **🔐 Authentication**: Secure Signup & Login utilizing JWT (JSON Web Tokens).
-*   **🔌 API Integration**: React components communicating with Django via Axios.
-*   **📱 Responsive Design**: Built with mobile-first principles.
-*   **⚡ Modern Tooling**: Powered by Vite for lightning-fast frontend development.
-*   **🛡️ Secure Backend**: Django Rest Framework ensuring safe data handling.
+- 🔐 **Authentication** — Secure Signup & Login using JWT (JSON Web Tokens)
+- 📚 **Course Catalog** — Browse courses in Java, Python, DSA, Git, REST APIs, Spring Boot
+- 🧠 **Quizzes** — Interactive knowledge checks after each lesson
+- 📥 **Downloads** — Cheat sheets and study material downloads
+- 🚀 **Projects Showcase** — Student and demo project gallery
+- 📬 **Contact Page** — Support and inquiry form
+- 👤 **User Profile** — Personalized authenticated user profile
+- 🌗 **Dark / Light Mode** — Persistent theme toggle across all pages
+- 🌌 **Space-Themed UI** — Glowing neon accents, floating animations, and cosmic aesthetics
+- 📱 **Responsive Design** — Mobile-first, works on all screen sizes
+
+---
 
 ## 🛠️ Tools & Technologies Used
 
-### Frontend (Client-Side) 🖥️
-*   **React** ⚛️: UI Library
-*   **Vite** ⚡: Next Generation Frontend Tooling
-*   **Axios** 📡: Promise based HTTP client
-*   **React Router** 🛣️: Declarative routing
-*   **Framer Motion** 🎬: Production-ready animation library
-*   **Lucide React** 🎨: Beautiful & consistent icons
-*   **Vanilla CSS** 💅: Custom styling with CSS variables
+### 🖥️ Frontend (React + Vite)
 
-### Backend (Server-Side) ⚙️
-*   **Python** 🐍: Core programming language
-*   **Django** 🎸: The web framework for perfectionists with deadlines
-*   **Django Rest Framework (DRF)** 📨: Toolkit for building Web APIs
-*   **Simple JWT** 🎫: JSON Web Token authentication
-*   **SQLite** 🗃️: Lightweight database (default)
+| Technology         | Version    | Purpose                                        |
+|--------------------|------------|------------------------------------------------|
+| **React**          | 18.x       | UI component library                           |
+| **Vite**           | 5.x        | Fast build tool and dev server                 |
+| **React Router Dom** | 6.x     | Client-side routing and navigation             |
+| **Framer Motion**  | 12.x       | Animations and page transitions                |
+| **Lucide React**   | 0.344.x    | Modern icon library                            |
+| **Axios**          | 1.x        | HTTP client for backend API communication      |
+| **Vanilla CSS**    | —          | Custom styling with CSS variables for theming  |
+
+### ⚙️ Backend (Java 21 + Spring Boot)
+
+| Technology              | Purpose                                        |
+|-------------------------|------------------------------------------------|
+| **Java 21**             | Core programming language                      |
+| **Spring Boot 4.x**     | Application framework                          |
+| **Spring Web MVC**      | Building RESTful API endpoints                 |
+| **Spring Security**     | Authentication and access-control              |
+| **Spring Data JPA**     | ORM and database interaction (Hibernate)       |
+| **H2 Database**         | In-memory database for local development       |
+| **JWT (jjwt 0.12.5)**   | Stateless token-based authentication           |
+| **Lombok**              | Boilerplate reduction (getters/setters/builders)|
+| **Spring Boot DevTools**| Hot reload during development                  |
+| **Maven**               | Dependency management and build tool           |
+
+---
 
 ## 📂 Project Structure
 
 ```bash
-react-py/
-├── 📂 backend/           # Django Application
-│   ├── 📂 api/           # API Views & Serializers
-│   ├── 📂 config/        # Project Settings
-│   ├── manage.py         # Django CLI utility
-│   └── requirements.txt  # Python dependencies
-├── 📂 frontend/          # React Application
-│   ├── 📂 src/           # Components, Pages, & Logic
-│   ├── 📂 public/        # Static assets
-│   ├── package.json      # Node.js dependencies
-│   └── vite.config.js    # Vite configuration
-└── README.md             # Project Documentation
+CodeVerse/
+├── 📂 backend/                        # Spring Boot Application
+│   ├── 📂 src/main/java/com/pycoder/backend/
+│   │   ├── 📂 config/                 # Security & CORS Configuration
+│   │   ├── 📂 controller/             # REST API Endpoints
+│   │   ├── 📂 model/                  # JPA Entities (User, etc.)
+│   │   ├── 📂 repository/             # Spring Data JPA Repositories
+│   │   └── 📂 security/               # JWT Filter & Auth Services
+│   ├── 📂 src/main/resources/
+│   │   └── application.properties     # Spring Boot config
+│   ├── pom.xml                        # Maven Dependencies
+│   └── mvnw / mvnw.cmd                # Maven Wrapper
+│
+├── 📂 frontend/                       # React Application (Vite)
+│   ├── 📂 src/
+│   │   ├── 📂 api/                    # Axios instance & API calls
+│   │   ├── 📂 components/             # Navbar, Footer, MotivationHero
+│   │   ├── 📂 data/                   # Static course data (courses.js)
+│   │   └── 📂 pages/                  # Home, Courses, Quiz, Login, etc.
+│   ├── 📂 public/                     # Static assets (images, icons)
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+│
+├── README.md
+├── DEPLOYMENT.md
+└── project.txt
 ```
+
+---
+
+## 📚 Courses Offered
+
+| # | Course | Topics Covered |
+|---|--------|----------------|
+| 1 | **Core Java Programming** | OOP, Data Types, Exception Handling, Multithreading |
+| 2 | **Java + DSA** | Arrays, Trees, Graphs, Sorting, DP |
+| 3 | **Git & GitHub Mastery** | Version Control, Branching, Pull Requests, Open Source |
+| 4 | **Building REST APIs** | HTTP Methods, JSON, Spring Boot, Postman |
+| 5 | **Basic Python** | Variables, Loops, Functions, File Handling |
+| 6 | **Spring Boot Backend** | DI, JPA, Spring Security, JWT, Microservices |
+
+---
 
 ## 🚀 Installation & Setup
 
-Follow these steps to get the project running on your local machine.
+### Prerequisites
+- **Java 21** (JDK) installed
+- **Node.js 18+** and **npm** installed
+- A terminal (PowerShell, Bash, etc.)
 
-### 1. Backend Setup (Django)
+---
 
-Navigate to the backend folder and create a virtual environment:
+### 1️⃣ Backend Setup (Spring Boot)
+
+Navigate to the backend folder:
 
 ```bash
 cd backend
-python -m venv venv
 ```
 
-Activate the virtual environment:
-*   **Windows**: `venv\Scripts\activate`
-*   **Mac/Linux**: `source venv/bin/activate`
+Start the Spring Boot app using the Maven wrapper:
 
-Install dependencies:
-
+- **Windows:**
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+- **Mac / Linux:**
 ```bash
-pip install -r requirements.txt
+./mvnw spring-boot:run
 ```
 
-Run migrations and start the server:
+> ✅ Backend runs at **`http://localhost:8080`**
+> 
+> 💾 Uses an **H2 in-memory database** — no external DB setup required.
 
-```bash
-python manage.py migrate
-python manage.py runserver
-```
-*The backend runs at `http://127.0.0.1:8000/`*
+---
 
-### 2. Frontend Setup (React)
+### 2️⃣ Frontend Setup (React + Vite)
 
-Open a new terminal, navigate to the frontend folder:
+Open a **new terminal**, navigate to the frontend folder:
 
 ```bash
 cd frontend
 ```
 
-Install Node.js dependencies:
+Install dependencies:
 
 ```bash
 npm install
@@ -99,19 +156,33 @@ Start the development server:
 ```bash
 npm run dev
 ```
-*The frontend runs at `http://localhost:5173/` (typically)*
 
-## 📝 Process Refinement
+> ✅ Frontend runs at **`http://localhost:5173`**
 
-1.  **Initialization**: Created separate environments for React (Vite) and Django.
-2.  **Configuration**: Set up CORS policies in Django to accept cross-origin requests from the React dev server.
-3.  **Development**: Built modular React components (`Navbar`, `Signup`, etc.) and connected them to Django API endpoints.
-4.  **Security**: Implemented JWT for stateful authentication without session cookies.
-5.  **Organization**: Restructured into clear `frontend` and `backend` directories for easier deployment and maintenance.
+---
+
+## 🔐 Authentication Flow
+
+1. User submits credentials on the **Login / Signup** page
+2. Spring Security validates credentials and returns a **JWT access token**
+3. React stores the token in `localStorage`
+4. All subsequent protected API requests include the token via **Axios interceptors**
+
+---
+
+## 📝 Development Notes
+
+1. **CORS** — Spring Boot is configured to allow cross-origin requests from `http://localhost:5173`
+2. **JWT Secret** — Configured in `application.properties` (use env variable in production)
+3. **H2 Console** — Available at `http://localhost:8080/h2-console` for local DB inspection
+4. **Vite Proxy** — Can be optionally configured in `vite.config.js` to proxy API requests
+
+---
 
 ## 👨‍💻 Author
 
 **Bammidi Himanth**
 
 ---
-*Created with ❤️ using React & Django*
+
+*Built with ❤️ using React ⚛️ & Spring Boot 🍃 — CodeVerse 🌌*

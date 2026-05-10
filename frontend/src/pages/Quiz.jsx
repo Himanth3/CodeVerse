@@ -86,10 +86,10 @@ const Quiz = () => {
 
     return (
         <div className="quiz-page">
-            <header className="quiz-header">
-                <h1>📝 Python Programming Quiz</h1>
-                <p className="tagline">Test your knowledge in Python Basics, Conditionals, Control Flow, Functions & Arrays</p>
-            </header>
+            <div className="quiz-header glass-panel" style={{padding: '2rem', marginBottom: '2rem', textAlign: 'center'}}>
+                <h1 style={{color: 'var(--accent-color)', textShadow: '0 0 10px var(--accent-color)'}}>📝 CodeVerse Programming Quiz</h1>
+                <p className="tagline" style={{color: 'var(--text-muted)'}}>Test your knowledge across different languages and frameworks</p>
+            </div>
 
             <div className="quiz-container">
                 {!submitted ? (

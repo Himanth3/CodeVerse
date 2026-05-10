@@ -1,207 +1,241 @@
+/* ================================
+   AUTH / SIGNUP / LOGIN / PROFILE
+   ================================ */
+
 .auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    padding: 2rem;
 }
 
 .auth-card {
-  background: #2a2a2a;
-  padding: 2rem;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  border: 1px solid #333;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border);
+    transition: border-color 0.3s ease;
+}
+
+.auth-card:hover {
+    border-color: var(--border-accent);
 }
 
 .auth-card h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #fff;
-  font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text);
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
+/* Form groups */
 .form-group {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #aaa;
-  font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
 }
 
 .form-group input {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background: #333;
-  color: #fff;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-  box-sizing: border-box;
-  /* Important for padding not to overflow width */
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-family: var(--font-family);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    box-sizing: border-box;
+}
+
+[data-theme='light'] .form-group input {
+    background: rgba(255, 255, 255, 0.6);
+    color: #1e1b4b;
 }
 
 .form-group input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
 }
 
+.form-group input::placeholder {
+    color: var(--text-dim);
+}
+
+/* Submit button */
 .auth-button {
-  width: 100%;
-  padding: 0.75rem;
-  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  margin-top: 1rem;
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    margin-top: 0.75rem;
+    letter-spacing: 0.02em;
 }
 
-.auth-button:hover {
-  opacity: 0.9;
+.auth-button:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
 }
 
+.auth-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Error message */
 .error-message {
-  background: rgba(255, 77, 77, 0.1);
-  color: #ff4d4d;
-  padding: 0.75rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  text-align: center;
-  border: 1px solid rgba(255, 77, 77, 0.2);
+    background: rgba(244, 63, 94, 0.1);
+    color: var(--rose);
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    text-align: center;
+    border: 1px solid rgba(244, 63, 94, 0.25);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
+/* Auth footer link */
 .auth-link {
-  text-align: center;
-  margin-top: 1.5rem;
-  color: #888;
-  font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 .auth-link a {
-  color: var(--primary-color);
-  text-decoration: none;
-  margin-left: 0.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.4rem;
+    transition: opacity 0.2s ease;
 }
 
 .auth-link a:hover {
-  text-decoration: underline;
+    opacity: 0.8;
+    text-decoration: underline;
 }
 
+/* Profile-specific */
 .profile-avatar {
-  width: 80px;
-  height: 80px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  color: white;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: white;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
 }
 
 .profile-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 1px solid #444;
-  color: #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 0.95rem;
 }
 
 .profile-item span:first-child {
-  color: #aaa;
-  font-weight: 500;
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
 .profile-item:last-of-type {
-  border-bottom: none;
-  margin-bottom: 1rem;
+    border-bottom: none;
+    margin-bottom: 1rem;
 }
 
-/* Custom Popup Styles */
+/* Popup */
 .popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.25s ease;
 }
 
 .popup-card {
-  background: #2a2a2a;
-  padding: 2rem;
-  border-radius: 16px;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  border: 1px solid #444;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  animation: slideUp 0.3s ease;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid var(--border-accent);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(34,211,238,0.15);
+    animation: slideUp 0.3s ease;
 }
 
 .popup-card h3 {
-  margin-top: 0;
-  color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+    margin-top: 0;
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .popup-card p {
-  color: #ccc;
-  margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
 .popup-button {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
+    background: linear-gradient(135deg, var(--primary), #4f46e5);
+    color: white;
+    border: none;
+    padding: 0.65rem 1.8rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 .popup-button:hover {
-  opacity: 0.9;
+    opacity: 0.9;
+    transform: translateY(-1px);
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from { transform: translateY(24px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
 }

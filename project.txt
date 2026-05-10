@@ -1,48 +1,156 @@
-# PyCode Project Documentation
+# CodeVerse — Project Documentation
+## Project Name: CodeVerse
 
 ## Project Overview
-This project is a web application that integrates a React frontend with a Django backend. It allows for user authentication (signup, login) using JWT tokens and provides a foundation for full-stack development.
+CodeVerse is a full-stack Learning Management System (LMS) web application built for aspiring developers.
+It offers interactive coding courses, quizzes, downloadable resources, and a personalized learning experience
+— all wrapped in a modern, space-themed user interface with glowing accents and dynamic animations.
 
-## Project Structure
-The project is organized into two main directories:
-- **frontend/**: Contains the React application created with Vite.
-- **backend/**: Contains the Django server with REST API endpoints.
+The platform empowers students to learn technologies like Java, Python, Spring Boot, Git & GitHub,
+REST APIs, and Data Structures & Algorithms — all in one place.
 
-## Tools & Technologies Used
+---
 
-### Frontend
-- **Framework**: React
-- **Build Tool**: Vite
-- **Styling**: Vanilla CSS (with CSS variables for theming)
-- **Routing**: React Router Dom
-- **State/Effect**: React Hooks
-- **Icons**: Lucide React
-- **Animations**: Framer Motion
-- **HTTP Client**: Axios (for communicating with the backend)
-
-### Backend
-- **Framework**: Django
-- **API Toolkit**: Django Rest Framework (DRF)
-- **Authentication**: JWT (JSON Web Tokens) via `djangorestframework-simplejwt`
-- **CORS Handling**: `django-cors-headers` (to allow requests from the React frontend)
-- **Database**: SQLite (default Django database)
-
-## Development Process
-1. **Frontend Setup**: Initialized using Vite (`npm create vite@latest`).
-2. **Backend Setup**: Initialized using Django (`django-admin startproject`).
-3. **Integration**: 
-   - Configured Django CORS headers to accept requests from the Vite dev server (usually localhost:5173).
-   - Set up Axios in React (`src/api/axios.js` or similar) to point to the Django API base URL.
-4. **Authentication Flow**:
-   - Implemented JWT authentication.
-   - React sends login credentials to Django.
-   - Django validates and returns access/refresh tokens.
-   - React stores tokens (e.g., in localStorage) and attaches them to subsequent requests.
-
-## Deployment Preparation
-- **Backend**: A `requirements.txt` file has been added to the `backend` folder.
-- **Frontend**: The React app is ready to be built using `npm run build` which generates static files in `dist/`.
+## Project Name
+**CodeVerse**
 
 ## Author
 Bammidi Himanth
 
+---
+
+## Project Structure
+```
+CodeVerse/
+├── frontend/       → React application (Vite)
+├── backend/        → Spring Boot REST API (Java 21)
+├── README.md
+├── DEPLOYMENT.md
+└── project.txt
+```
+
+---
+
+## Tools & Technologies Used
+
+### 🎨 Frontend
+| Technology         | Purpose                                          |
+|--------------------|--------------------------------------------------|
+| **React 18**       | UI component framework                           |
+| **Vite**           | Fast build tool and dev server                   |
+| **Vanilla CSS**    | Custom styling with CSS variables for theming    |
+| **React Router Dom v6** | Client-side routing and navigation          |
+| **React Hooks**    | State and side-effect management                 |
+| **Framer Motion**  | Smooth animations and page transitions           |
+| **Lucide React**   | Modern icon library                              |
+| **Axios**          | HTTP client for backend API communication        |
+
+### ⚙️ Backend
+| Technology              | Purpose                                        |
+|-------------------------|------------------------------------------------|
+| **Java 21**             | Programming language                           |
+| **Spring Boot 4.x**     | Application framework                          |
+| **Spring Web MVC**      | Building RESTful API endpoints                 |
+| **Spring Security**     | Authentication and authorization               |
+| **Spring Data JPA**     | ORM and database interaction                   |
+| **Hibernate**           | JPA implementation                             |
+| **H2 Database**         | In-memory database (development/default)       |
+| **JWT (jjwt 0.12.5)**   | Stateless token-based authentication           |
+| **Lombok**              | Boilerplate code reduction (getters/setters)   |
+| **Spring Boot DevTools**| Hot reload during development                  |
+| **Maven**               | Dependency management and build tool           |
+
+---
+
+## About This Website
+
+### 🌌 What is CodeVerse?
+CodeVerse is an online coding education platform designed to make programming approachable and engaging.
+The platform combines a sleek, space-themed UI with practical coding lessons, giving learners an
+immersive learning experience.
+
+### 📚 Courses Offered
+1. **Core Java Programming** — Variables, OOP, packages, exception handling, multithreading
+2. **Java + DSA** — Arrays, Linked Lists, Trees, Graphs, Sorting, Dynamic Programming
+3. **Git & GitHub Mastery** — Version control, branching, merging, pull requests, open source
+4. **Building REST APIs** — HTTP methods, JSON, Spring Boot APIs, Postman testing
+5. **Basic Python** — Variables, loops, functions, file handling, data structures
+6. **Spring Boot Backend** — DI, JPA, Spring Security, JWT, microservices, deployment
+
+### 🖥️ Key Features
+- **User Authentication** — Secure Signup & Login using JWT tokens
+- **Course Catalog** — Browse and explore multiple programming courses
+- **Course Detail Pages** — Topics list, code examples, and learning objectives
+- **Quizzes** — Interactive quizzes to test knowledge after each lesson
+- **Downloads** — Downloadable resources, cheat sheets, and study materials
+- **Projects Showcase** — A dedicated section for student and demo projects
+- **Contact Page** — Reach out form for support and inquiries
+- **User Profile** — Personalized profile page for authenticated users
+- **Light / Dark Mode** — Persistent theme switching across the entire platform
+- **Space-Themed UI** — Glowing accents, floating animations, and a cinematic look
+
+---
+
+## Development Process
+
+### 1. Frontend Setup
+- Initialized using Vite: `npm create vite@latest`
+- Project structure: `src/pages/`, `src/components/`, `src/api/`, `src/data/`
+- Routing configured with React Router Dom (v6)
+
+### 2. Backend Setup
+- Initialized via Spring Initializr
+- Package: `com.codeverse.backend`
+- REST API served at `http://localhost:8080`
+
+### 3. Frontend–Backend Integration
+- Spring Boot CORS configured to accept requests from Vite dev server (`localhost:5173`)
+- Axios configured with a base URL pointing to the Spring Boot API
+
+### 4. Authentication Flow
+1. User submits credentials via Login/Signup page
+2. Spring Security validates and returns a **JWT access token**
+3. React stores the token in `localStorage`
+4. Token is attached to all subsequent protected API requests via Axios interceptors
+
+### 5. UI & Theming
+- CSS variables used for a full light/dark mode system
+- Framer Motion powers all page transitions and element animations
+- Space/cosmic theme with neon glow effects, star-like particles, and gradient backgrounds
+
+---
+
+## Pages & Components
+
+### Pages (`frontend/src/pages/`)
+| Page             | Description                                      |
+|------------------|--------------------------------------------------|
+| `Home.jsx`       | Landing page with hero section and course previews |
+| `Courses.jsx`    | Browse all available courses                     |
+| `CourseDetail.jsx` | Individual course info with code examples      |
+| `Quiz.jsx`       | Interactive quiz engine                          |
+| `Download.jsx`   | Downloadable study resources                     |
+| `Projects.jsx`   | Project showcase section                         |
+| `Contact.jsx`    | Contact form for support                         |
+| `Login.jsx`      | JWT-based user login                             |
+| `Signup.jsx`     | New user registration                            |
+| `Profile.jsx`    | Authenticated user profile page                  |
+
+### Components (`frontend/src/components/`)
+| Component           | Description                                   |
+|---------------------|-----------------------------------------------|
+| `Navbar.jsx`        | Responsive navigation bar with theme toggle   |
+| `Footer.jsx`        | Site-wide footer                              |
+| `MotivationHero.jsx`| Animated hero section on the home page        |
+
+---
+
+## Deployment Preparation
+- **Backend**: Built with Maven (`./mvnw clean package`). Produces a `.jar` deployable on any JVM.
+- **Frontend**: Built with Vite (`npm run build`). Outputs static files to `dist/` for CDN or static hosting.
+- Full deployment guide available in `DEPLOYMENT.md`.
+
+---
+
+## Version
+v1.0.0 — Initial Release

@@ -1,10 +1,111 @@
 export const courses = [
     {
+        id: 'java-programming',
+        title: 'Core Java Programming',
+        tagline: 'Start your journey with Java — robust and platform-independent!',
+        image: '/images/java-programming.png',
+        description: 'Learn variables, loops, object-oriented concepts, and more in Java.',
+        topics: [
+            '☕ Introduction to Java',
+            '🔢 Data Types & Variables',
+            '🧱 Object-Oriented Programming',
+            '📦 Packages & Interfaces',
+            '🚨 Exception Handling',
+            '🧵 Multithreading Basics'
+        ],
+        codeExample: `public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, CodeVerse! 🌌");
+        
+        for(int i = 0; i < 3; i++) {
+            System.out.println("Exploring the universe...");
+        }
+    }
+}`
+    },
+    {
+        id: 'java-dsa',
+        title: 'Java + DSA',
+        tagline: 'Master Data Structures & Algorithms to crack top tech interviews!',
+        image: '/images/JAVA+DSA.png',
+        description: 'Deep dive into Arrays, Linked Lists, Trees, Graphs, and DP using Java.',
+        topics: [
+            '📊 Arrays and Strings',
+            '🔁 Recursion and Backtracking',
+            '🌳 Linked Lists, Trees, and Graphs',
+            '🗃️ Stacks and Queues',
+            '🔍 Searching and Sorting',
+            '⚙️ Dynamic Programming'
+        ],
+        codeExample: `// Binary Search in Java
+public int binarySearch(int[] arr, int target) {
+    int left = 0, right = arr.length - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) return mid;
+        if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}`
+    },
+    {
+        id: 'git-github',
+        title: 'Git & GitHub Mastery',
+        tagline: 'Version control like a pro.',
+        image: '/images/gitgithub.png',
+        description: 'Learn the industry standard for version control and collaborative coding.',
+        topics: [
+            '📂 Introduction to Version Control',
+            '⚡ Basic Git Commands',
+            '🔀 Branching & Merging',
+            '☁️ Remote Repositories (GitHub)',
+            '🚨 Resolving Merge Conflicts',
+            '🤝 Pull Requests & Open Source'
+        ],
+        codeExample: `# Initialize a new repository
+git init
+
+# Add all files to staging
+git add .
+
+# Commit changes
+git commit -m "feat: initial commit from CodeVerse"
+
+# Push to remote
+git push -u origin main`
+    },
+    {
+        id: 'rest-api',
+        title: 'Building REST APIs',
+        tagline: 'Connect the world with robust backend services.',
+        image: '/images/RESTAPI.png',
+        description: 'Understand the core principles of REST, HTTP methods, and API design.',
+        topics: [
+            '🌐 What is a REST API?',
+            '📡 HTTP Methods (GET, POST, PUT, DELETE)',
+            '🔐 Authentication & Authorization',
+            '📦 JSON Data Handling',
+            '🚀 Building APIs with Spring Boot',
+            '🧪 Testing with Postman/cURL'
+        ],
+        codeExample: `// Spring Boot REST Controller
+@RestController
+@RequestMapping("/api/planets")
+public class PlanetController {
+    
+    @GetMapping("/")
+    public ResponseEntity<List<Planet>> getPlanets() {
+        return ResponseEntity.ok(planetService.getAll());
+    }
+}`
+    },
+    {
         id: 'python-basic',
         title: 'Basic Python',
-        tagline: 'Start your coding journey with Python fundamentals!',
+        tagline: 'Learn the easiest and most popular language today.',
         image: '/images/python-basic.png',
-        description: 'Learn variables, loops, conditions, and functions — perfect for beginners.',
+        description: 'Start coding with Python fundamentals — variables, loops, functions.',
         topics: [
             '🧮 Introduction to Python',
             '🔢 Variables and Data Types',
@@ -14,110 +115,31 @@ export const courses = [
             '📄 File Handling Basics'
         ],
         codeExample: `# This is your first Python code
-print("Hello, Python World! 🐍")
+print("Hello, CodeVerse! 🌌")
 
-# Simple variable and loop
-name = "Himanth"
+name = "Explorer"
 for i in range(3):
     print("Welcome,", name)`
     },
     {
-        id: 'python-oops',
-        title: 'OOPs with Python',
-        tagline: 'Learn Object-Oriented Programming in Python – a powerful coding paradigm!',
-        image: '/images/python-oops.png',
-        description: 'Understand classes, objects, inheritance, polymorphism, and more!',
+        id: 'springboot-backend',
+        title: 'Spring Boot Backend',
+        tagline: 'Build enterprise-grade applications.',
+        image: '/images/springboot.png',
+        description: 'Create powerful, scalable, and secure backend systems with Spring Boot.',
         topics: [
-            '🔹 What is OOP?',
-            '🧱 Classes and Objects',
-            '🔄 Inheritance',
-            '🔐 Encapsulation & Abstraction',
-            '🧠 Polymorphism',
-            '🛠️ Real-world OOP Projects'
+            '🍃 Spring Core & Dependency Injection',
+            '⚡ Spring Boot Auto-Configuration',
+            '🗄️ Spring Data JPA & Hibernate',
+            '🛡️ Spring Security & JWT',
+            '☁️ Microservices Basics',
+            '🚀 Deployment'
         ],
-        codeExample: `class Car:
-    def __init__(self, brand):
-        self.brand = brand
-
-    def drive(self):
-        print(f"Driving a {self.brand} car")
-
-my_car = Car("Tesla")
-my_car.drive()`
-    },
-    {
-        id: 'python-flask',
-        title: 'Flask Web Dev',
-        tagline: 'Build powerful web apps with Python & Flask!',
-        image: '/images/flask.png',
-        description: 'Build lightweight web apps using Flask — fast and beginner-friendly.',
-        topics: [
-            '🌐 Introduction to Flask',
-            '🛠️ Setting up your Flask Project',
-            '🧭 Routing and Templates',
-            '📄 Forms and Request Handling',
-            '💾 Connecting to Databases',
-            '🔐 Authentication and Deployment'
-        ],
-        codeExample: `from flask import Flask
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Hello from Flask! 🔥"
-
-if __name__ == '__main__':
-    app.run(debug=True)`
-    },
-    {
-        id: 'python-django',
-        title: 'Django Framework',
-        tagline: 'Level up with Django – Python’s most powerful web framework!',
-        image: '/images/Django.png',
-        description: 'Master full-stack development with Django’s powerful ecosystem.',
-        topics: [
-            '⚙️ Introduction to Django',
-            '🗂️ Project and App Structure',
-            '🌐 URL Routing and Views',
-            '🧠 Templates and Static Files',
-            '🛢️ Models and Database Integration',
-            '🔐 Authentication & Admin Panel'
-        ],
-        codeExample: `# mysite/views.py
-from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse("Welcome to Django! ⚙️")`
-    },
-    {
-        id: 'python-dsa',
-        title: 'DSA with Python',
-        tagline: 'Crack coding interviews by mastering Data Structures and Algorithms!',
-        image: '/images/DSA.png',
-        description: 'Crack coding interviews by mastering Data Structures & Algorithms in Python.',
-        topics: [
-            '📊 Arrays and Strings',
-            '🔁 Recursion and Backtracking',
-            '🌳 Linked Lists, Trees, and Graphs',
-            '🗃️ Stacks and Queues',
-            '🔍 Searching and Sorting',
-            '⚙️ Time and Space Complexity'
-        ],
-        codeExample: `# Binary Search in Python
-
-def binary_search(arr, target):
-    left, right = 0, len(arr) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    return -1
-
-print(binary_search([1, 2, 3, 4, 5], 4))  # Output: 3`
+        codeExample: `@SpringBootApplication
+public class CodeVerseApp {
+    public static void main(String[] args) {
+        SpringApplication.run(CodeVerseApp.class, args);
+    }
+}`
     }
 ];
